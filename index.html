@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Linkedin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="data:image/png;base64,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" type="image/x-icon">
+  </head>
+  <body style="background-color: rgba(243,242,240,255);">
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-lg bg-white" style="position: sticky;">
+        <div class="container-fluid bg-white">
+            <div class="col-1 col-lg-1"></div>
+
+            <div class="col-3 col-lg-5 d-flex bg-white">
+                <a class="navbar-brand" href="#"> <i class="fa-brands fa-linkedin fa-2xl" style="color: #0b66c2;"></i> </a>
+                <input class="form-control me-2" type="search" placeholder="Arama Yap" aria-label="Search" 
+                style="width: 45%; background-color: rgba(237,243,247,255); background-image: url(/assets/search-solid.svg); background-repeat: no-repeat; background-size: 6%; background-position: 2%; padding-left: 2rem;">
+            </div>
+
+            <div class="col-5 col-lg-4 buttons bg-white">
+                <a class="nav-link link-dark" href="#" style="border-bottom: 1px solid black;">
+                    <i class="fa-solid fa-house-chimney"></i>
+                    <p class="d-none d-md-flex fw-bold" style="font-size: smaller;">Ana Sayfa</p>
+                </a>
+
+                <a class="nav-link link-secondary">
+                    <i class="fa-solid fa-user-group"></i>                    
+                    <p class="d-none d-md-flex fw-bold" style="font-size: smaller;">Ağım</p>
+                </a>
+
+                <a class="nav-link link-secondary">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <p class="d-none d-md-flex fw-bold" style="font-size:smaller;">İş İlanları</p>
+                </a>
+
+                <a class="nav-link link-secondary">
+                    <i class="fa-solid fa-comment-dots"></i>
+                    <p class="d-none d-md-flex fw-bold" style="font-size:smaller;">Mesajlaşma</p>
+                </a>
+
+                <a class="nav-link link-secondary">
+                    <i class="fa-solid fa-bell"></i>
+                    <p class="d-none d-md-flex fw-bold" style="font-size:smaller;">Bildirimler</p>
+                </a>
+
+                <a class="nav-link link-secondary">
+                    <i class="fa-solid fa-user" style="color: #778fa5; padding: 0.4em;background-color: rgba(231,226,220,255); border-radius: 50%;"></i>
+                    <p class="d-none d-md-flex dropdown-toggle fw-bold" style="font-size: smaller;">Ben</p>
+                </a>
+
+                
+            </div>
+
+            <div class="col-2 bg-white buttons" style="border-left: 2px solid rgba(243,242,240,255)">
+                <a class="nav-link link-secondary">
+                    <i class="fa-solid fa-table-cells"></i>
+                    <p class="d-none d-md-flex dropdown-toggle fw-bold" style="font-size: smaller;">İş İçin</p>
+                </a>
+                <a class="nav-link link-secondary">
+                    <i class="fa-solid fa-chalkboard"></i>
+                    <p class="d-none d-md-flex fw-bold" style="font-size: smaller;">İş İlanı Yayınla</p>
+                </a>
+            </div>
+            
+        </div>
+      </nav>
+
+     
+      <div class="container mt-3">
+        <div class="row">
+
+            <!-- LEFT SIDE-->
+            <div class="col-3 col-lg-2 ms-5 mx-1 pt-4">
+                <div class="card p-0 d-flex justify-content-center align-items-center"
+            style="background-image: url(/assets/Linkedin\ background\ profile.png);background-repeat: no-repeat ;background-size:100% 50px;">
+                    
+                    <img src="/assets/no_profile_photo.png" alt="profile_photo" style="border-radius: 50%; width: 70px; height: 70px; margin-top: 1rem;">
+                    <h6 class="mt-3 bg-white fw-bold">Ahsen ALTAŞ</h6>
+                    <p class="bg-white text-secondary mb-4" style="text-align: center;">Computer Engineering Student at Marmara University</p>
+
+                    <div class="container d-flex bg-white pt-2" style="border-top: 1px solid rgba(243,242,240,255);">
+                        <p class="col-9 small bg-white"> Profilinizi kimler görüntüledi</p>
+                        <p class="col-3 bg-white" style="color:blue">447</p>
+                    </div>
+                    <div class="container d-flex bg-white">
+                        <p class="col-9 small bg-white"> Yayınınız için görüntüleme</p>
+                        <p class="col-3 bg-white" style="color:blue">150</p>
+                    </div>
+                    <div class="bg-white pt-2 float-start mb-2" style="border-top: 1px solid rgba(243,242,240,255);">
+                        <i class="fa-solid fa-bookmark bg-white" style="color: #666666;"></i>
+                        <a href="" class="bg-white" style="color:black; text-decoration: none;">Ögelerim</a>
+                    </div>
+                </div>
+
+                <div class="container card mt-2 p-2">
+                    <h5 class="bg-white">Sayfalarım</h5>
+
+                    <div class="container h-50 d-flex flex-row justify-content-center p-2 bg-white">
+                        <img class="col-2 me-1" src="https://media.licdn.com/dms/image/C4E0BAQGl9HYLHdcl6g/company-logo_200_200/0/1610108537301?e=1700697600&v=beta&t=qTAxq-fe4dsnbakbsnvR1e4ts73mbtBM32jj289cnC0" alt="Kablosuz_Beyin"
+                        style="width: 50px; height: 50px;">
+
+                        <div class="col-9 d-flex flex-column bg-white h-50">
+                            <a href="https://www.linkedin.com/company/kablosuzbeyin/" class="fw-bold small bg-white mb-0 ms-1 text-decoration-none text-black">Kablosuz Beyin</a>
+                            <div class="d-flex bg-white container p-0">
+                                <p class="text-secondary small bg-white col-11">Sayfa Bildirimleri</p>
+                                <p class="col-1 bg-white" style="color: blue;">4</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+                <div class="container card mt-2">
+                    <p class="bg-white mt-2">En Yeni</p>
+                    <ul class="bg-white" id="hashtag">
+                        <li><a href="#">kodluyoruz</a></li>
+                        <li><a href="#">front-end</a></li>
+                        <li><a href="#">html</a></li>
+                        <li><a href="#">css</a></li>
+                        <li><a href="#">bootstrap</a></li>
+                    </ul>
+
+                    <p class="bg-white" style="color: rgba(11,102,194,255);">Gruplar</p>
+                    <div class="bg-white mb-3" style="display:flex;justify-content: space-between; flex-direction: row; border-bottom: 1px solid black;">
+                        <p class="bg-white" style="color: rgba(11,102,194,255)">Etkinlikler</p>
+                        <p class="bg-white" style="font-size: larger;">+</p>
+                    </div>
+                    
+                    <button class="m-0 mb-3 btn btn-light ">Daha Fazla Keşfet</button>
+                </div>
+            </div>
+            
+            <!--CENTER CONTENT-->
+            <div class="col-7 col-lg-6 p-4 px-5">
+                <div class="card bg-white p-2">
+                    <div class="bg-white">
+                        <img src="/assets/no_profile_photo.png" alt="profile_photo" style="width: 70px; height: 70px; background-color: white;">
+                        <input class="bg-white" type="search" placeholder="Gönderi Başlat" style="border-radius: 10px/20px; padding: 0.5rem; width: 80%; border-color: rgba(212,218,224,255);">
+                    </div>
+                    
+                    <div id="share" class="bg-white d-flex justify-content-around mt-2 mb-2">
+                        <button class="btn btn-light d-flex align-items-center">
+                            <i class="fa-regular fa-image pe-2" style="color: #378fe9;"></i>
+                            <p class="mb-0 d-lg-flex d-none fw-bold" style="background-color: rgba(248,249,250,255); color: #777777;">Fotoğraf</p>
+                        </button>
+                        <button class="btn btn-light d-flex align-items-center">
+                            <i class="fa-brands fa-youtube pe-2" style="color: #5f9b41;"></i>
+                            <p class="mb-0 d-lg-flex d-none fw-bold" style="background-color: rgba(248,249,250,255); color: #777777;">Video</p>
+                        </button>
+                        <button class="btn btn-light d-flex align-items-center">
+                            <i class="fa-solid fa-calendar-days pe-2" style="color: #c37d17;"></i>
+                            <p class="mb-0 d-lg-flex d-none fw-bold" style="background-color: rgba(248,249,250,255); color: #777777;">Etkinlik</p>
+                        </button>
+                        <button class="btn btn-light d-flex align-items-center">
+                            <i class="fa-solid fa-newspaper pe-2" style="color: #e16745;"></i>
+                            <p class="mb-0 d-lg-flex d-none fw-bold" style="background-color: rgba(248,249,250,255); color: #777777;">Yazı Yaz</p>
+                        </button>
+                    </div>
+                </div>
+                <!--POST - 1-->
+                <div class="card bg-white mt-3">
+
+                    <div class="bg-white d-flex flex-row p-2 my-2">
+                        <img src="https://media.licdn.com/dms/image/C4E03AQGiWpTUewQ76Q/profile-displayphoto-shrink_400_400/0/1613923672228?e=1698278400&v=beta&t=8Fd-CI71fvj9_RS0fOUp1ndLbdXEzTeMkcTEP-DjrjI" alt="David_J"
+                        class="mx-2" style="width: 60px; height: 60px; border-radius: 50%;">
+
+                        <div class="bg-white w-100">
+                            <a href="#" class="bg-white fw-bold mb-0 text-decoration-none text-black">David J. Malan</a>
+                            <div class="d-flex flex-row justify-content-between bg-white ">
+                                <p class="text-secondary bg-white mb-0 mt-0 p-0" style="font-size: smaller;">I teach CS50</p>
+                                <a href="#" class="me-2 bg-white"><i class="fa-solid fa-ellipsis fa-xl " style="color: #666666;"></i></a>
+                            </div>
+                            
+                            <div class="d-flex flex-row bg-white p-0">
+                                <p class="text-secondary bg-white me-1 small mb-0" style="font-size: smaller;">25a</p>
+                                <i class="fa-solid fa-earth-americas bg-white pt-1 mb-0" style="color: #8f8f8f;"></i>
+                            </div>
+                        </div>  
+
+                    </div>
+
+                    <p class="bg-white ms-2">They have done great things! Tebrikler Kodluyoruz!</p>
+                    <img src="https://pbs.twimg.com/media/Em2_xBbXUAEVDx1.jpg" alt="post" style="width: 100%; height: 20%; margin: 0;">
+
+                    
+                    <div id="bottom" class="bg-white d-flex align-items-center m-1 p-1">
+                        <button class="bg-white border-0"><i class="fa-solid fa-thumbs-up fa-flip-horizontal p-1" style="color: #e2f8ff; background-color: rgba(0,135,194,255); border-radius: 50%;"></i></button>
+                        <button class="bg-white border-0"><i class="fa-solid fa-hands-clapping p-1 mx-1" style="color: #d7f7cd; background-color: rgba(74,165,55,255); border-radius: 50%;"></i></button>
+                        <button class="bg-white border-0"><i class="fa-solid fa-heart p-1" style="color: #fff3ef; background-color: rgba(240,104,66,255); border-radius: 50%;"></i></button>
+                        <p class="text-secondary bg-white ms-2 mb-0">958</p>
+                    </div>
+
+                    <div class="bg-white d-flex">
+                        <button class="d-flex align-items-center p-2 border-0 m-2">
+                            <i class="fa-regular fa-thumbs-up" style="color: #5f5f5f;"></i>
+                            <p class="d-none d-lg-flex" style="font-weight: bold; color: #5f5f5f;margin-bottom: 0;">Beğen</p>
+                        </button>
+                        <button class="d-flex align-items-center p-2 border-0 m-2">
+                            <i class="fa-regular fa-comment" style="color: #5f5f5f;"></i>
+                            <p class="d-none d-lg-flex" style="font-weight: bold; color: #5f5f5f;margin-bottom: 0;">Yorum Yap</p>
+                        </button>
+                        <button class="d-flex align-items-center p-2 border-0 m-2">
+                            <i class="fa-solid fa-share" style="color: #5f5f5f;"></i>
+                            <p class="d-none d-lg-flex" style="font-weight: bold; color: #5f5f5f;margin-bottom: 0;">Paylaş</p>
+                        </button>
+                        <button class="d-flex align-items-center p-2 border-0 m-2">
+                            <i class="fa-solid fa-paper-plane" style="color: #5f5f5f;"></i>
+                            <p class="d-none d-lg-flex" style="font-weight: bold; color: #5f5f5f;margin-bottom: 0;">Gönder</p>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- POST -2-->
+                <div class="card bg-white mt-3">
+
+                    <div class="bg-white d-flex flex-row p-2 my-2">
+                        <img src="https://media.licdn.com/dms/image/C4E03AQGiWpTUewQ76Q/profile-displayphoto-shrink_400_400/0/1613923672228?e=1698278400&v=beta&t=8Fd-CI71fvj9_RS0fOUp1ndLbdXEzTeMkcTEP-DjrjI" alt="David_J"
+                        class="mx-2" style="width: 60px; height: 60px; border-radius: 50%;">
+
+                        <div class="bg-white w-100">
+                            <a href="#" class="bg-white fw-bold mb-0 text-decoration-none text-black">David J. Malan</a>
+                            <div class="d-flex flex-row justify-content-between bg-white ">
+                                <p class="text-secondary bg-white mb-0 mt-0 p-0" style="font-size: smaller;">I teach CS50</p>
+                                <a href="#" class="me-2 bg-white"><i class="fa-solid fa-ellipsis fa-xl " style="color: #666666;"></i></a>
+                            </div>
+                            
+                            <div class="d-flex flex-row bg-white p-0">
+                                <p class="text-secondary bg-white me-1 small mb-0" style="font-size: smaller;">25a</p>
+                                <i class="fa-solid fa-earth-americas bg-white pt-1 mb-0" style="color: #8f8f8f;"></i>
+                            </div>
+                        </div>  
+                        
+                    </div>
+
+                    <p class="bg-white ms-2">They have done great things! Tebrikler Kodluyoruz!</p>
+                    <img src="https://pbs.twimg.com/media/Em2_xBbXUAEVDx1.jpg" alt="post" style="width: 100%; height: 20%; margin: 0;">
+
+                    
+                    <div id="bottom" class="bg-white d-flex align-items-center m-1 p-1">
+                        <button class="bg-white border-0"><i class="fa-solid fa-thumbs-up fa-flip-horizontal p-1" style="color: #e2f8ff; background-color: rgba(0,135,194,255); border-radius: 50%;"></i></button>
+                        <button class="bg-white border-0"><i class="fa-solid fa-hands-clapping p-1 mx-1" style="color: #d7f7cd; background-color: rgba(74,165,55,255); border-radius: 50%;"></i></button>
+                        <button class="bg-white border-0"><i class="fa-solid fa-heart p-1" style="color: #fff3ef; background-color: rgba(240,104,66,255); border-radius: 50%;"></i></button>
+                        <p class="text-secondary bg-white ms-2 mb-0">958</p>
+                    </div>
+                    <div class="bg-white d-flex">
+                        <button class="d-flex align-items-center p-2 border-0 m-2">
+                            <i class="fa-regular fa-thumbs-up" style="color: #5f5f5f;"></i>
+                            <p class="d-none d-lg-flex" style="font-weight: bold; color: #5f5f5f;margin-bottom: 0;">Beğen</p>
+                        </button>
+                        <button class="d-flex align-items-center p-2 border-0 m-2">
+                            <i class="fa-regular fa-comment" style="color: #5f5f5f;"></i>
+                            <p class="d-none d-lg-flex" style="font-weight: bold; color: #5f5f5f;margin-bottom: 0;">Yorum Yap</p>
+                        </button>
+                        <button class="d-flex align-items-center p-2 border-0 m-2">
+                            <i class="fa-solid fa-share" style="color: #5f5f5f;"></i>
+                            <p class="d-none d-lg-flex" style="font-weight: bold; color: #5f5f5f;margin-bottom: 0;">Paylaş</p>
+                        </button>
+                        <button class="d-flex align-items-center p-2 border-0 m-2">
+                            <i class="fa-solid fa-paper-plane" style="color: #5f5f5f;"></i>
+                            <p class="d-none d-lg-flex" style="font-weight: bold; color: #5f5f5f;margin-bottom: 0;">Gönder</p>
+                        </button>
+                    </div>
+                </div>
+
+                <!--POST - 3-->
+                <div class="card bg-white mt-3">
+
+                    <div class="bg-white d-flex flex-row p-2 my-2">
+                        <img src="https://media.licdn.com/dms/image/C4E03AQGiWpTUewQ76Q/profile-displayphoto-shrink_400_400/0/1613923672228?e=1698278400&v=beta&t=8Fd-CI71fvj9_RS0fOUp1ndLbdXEzTeMkcTEP-DjrjI" alt="David_J"
+                        class="mx-2" style="width: 60px; height: 60px; border-radius: 50%;">
+
+                        <div class="bg-white w-100">
+                            <a href="#" class="bg-white fw-bold mb-0 text-decoration-none text-black">David J. Malan</a>
+                            <div class="d-flex flex-row justify-content-between bg-white ">
+                                <p class="text-secondary bg-white mb-0 mt-0 p-0" style="font-size: smaller;">I teach CS50</p>
+                                <a href="#" class="me-2 bg-white"><i class="fa-solid fa-ellipsis fa-xl " style="color: #666666;"></i></a>
+                            </div>
+                            
+                            <div class="d-flex flex-row bg-white p-0">
+                                <p class="text-secondary bg-white me-1 small mb-0" style="font-size: smaller;">25a</p>
+                                <i class="fa-solid fa-earth-americas bg-white pt-1 mb-0" style="color: #8f8f8f;"></i>
+                            </div>
+                        </div>  
+                        
+                    </div>
+
+                    <p class="bg-white ms-2">They have done great things! Tebrikler Kodluyoruz!</p>
+                    <img src="https://pbs.twimg.com/media/Em2_xBbXUAEVDx1.jpg" alt="post" style="width: 100%; height: 20%; margin: 0;">
+
+                    
+                    <div id="bottom" class="bg-white d-flex align-items-center m-1 p-1">
+                        <button class="bg-white border-0"><i class="fa-solid fa-thumbs-up fa-flip-horizontal p-1" style="color: #e2f8ff; background-color: rgba(0,135,194,255); border-radius: 50%;"></i></button>
+                        <button class="bg-white border-0"><i class="fa-solid fa-hands-clapping p-1 mx-1" style="color: #d7f7cd; background-color: rgba(74,165,55,255); border-radius: 50%;"></i></button>
+                        <button class="bg-white border-0"><i class="fa-solid fa-heart p-1" style="color: #fff3ef; background-color: rgba(240,104,66,255); border-radius: 50%;"></i></button>
+                        <p class="text-secondary bg-white ms-2 mb-0">958</p>
+                    </div>
+                    <div class="bg-white d-flex">
+                        <button class="d-flex align-items-center p-2 border-0 m-2">
+                            <i class="fa-regular fa-thumbs-up" style="color: #5f5f5f;"></i>
+                            <p class="d-none d-lg-flex" style="font-weight: bold; color: #5f5f5f;margin-bottom: 0;">Beğen</p>
+                        </button>
+                        <button class="d-flex align-items-center p-2 border-0 m-2">
+                            <i class="fa-regular fa-comment" style="color: #5f5f5f;"></i>
+                            <p class="d-none d-lg-flex" style="font-weight: bold; color: #5f5f5f;margin-bottom: 0;">Yorum Yap</p>
+                        </button>
+                        <button class="d-flex align-items-center p-2 border-0 m-2">
+                            <i class="fa-solid fa-share" style="color: #5f5f5f;"></i>
+                            <p class="d-none d-lg-flex" style="font-weight: bold; color: #5f5f5f;margin-bottom: 0;">Paylaş</p>
+                        </button>
+                        <button class="d-flex align-items-center p-2 border-0 m-2">
+                            <i class="fa-solid fa-paper-plane" style="color: #5f5f5f;"></i>
+                            <p class="d-none d-lg-flex" style="font-weight: bold; color: #5f5f5f;margin-bottom: 0;">Gönder</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE-->
+            <div class="col-10 col-lg-3 mx-1 me-5 p-4">
+                <div class="card">
+                    <div class="d-flex justify-content-between bg-white align-items-center p-2 my-2">
+                        <p class="bg-white mb-0">Akışınıza Ekleyin</p>
+                        <i class="fa-solid fa-circle-info bg-white" style="color: #878787;"></i>
+                    </div>
+                    <div class="bg-white d-flex align-items-center justify-content-between mx-1 mb-3">
+                        <div class="bg-white d-flex align-items-center mx-1">
+                            <img src="https://media.licdn.com/dms/image/C4D0BAQEG_MlSuwzeFw/company-logo_200_200/0/1573099722403?e=1700697600&v=beta&t=gM_yZXqmEps5Y1xuJd9qj8kOI31vzozyzuuIjkf_imM" alt="Codecraft"
+                            style="width: 50px; height: 50px; border-radius: 50%;">
+                            <p class="fw-bold mb-0 bg-white ms-2">Codecraft</p>
+                        </div>
+                        <button type="button" class="btn p-1 px-2 fw-bold" style="color: rgba(0,188,204,255); border: 1px solid rgba(0, 188, 204, 255); border-radius: 30px/30px;"> + Takip Et</button>
+                    </div>
+
+                    <div class="bg-white d-flex align-items-center justify-content-between mx-1 mb-3">
+                        <div class="bg-white d-flex align-items-center mx-1">
+                            <img src="https://media.licdn.com/dms/image/D4D0BAQG5dQ0zU4HmFQ/company-logo_200_200/0/1683568997481?e=1700697600&v=beta&t=_piK4PRbBWJAOe5kwcHVyEQrdbpR2XakdOfRiSQ5D-o" alt="Podfresh"
+                            style="width: 50px; height: 50px; border-radius: 50%;">
+                            <p class="fw-bold mb-0 bg-white ms-2">Podfresh</p>
+                        </div>
+                        <button type="button" class="btn p-1 px-2 fw-bold" style="color: rgba(0,188,204,255); border: 1px solid rgba(0, 188, 204, 255); border-radius: 30px/30px;"> + Takip Et</button>
+                    </div>
+
+                    <div class="bg-white d-flex align-items-center justify-content-between mx-1 mb-3">
+                        <div class="bg-white d-flex align-items-center mx-1">
+                            <img src="https://media.licdn.com/dms/image/C4D0BAQEmOybM-93E9Q/company-logo_200_200/0/1676874285370?e=1700697600&v=beta&t=eQa9mU-Rq9s_7rr5PweqKKMvH5e6rZ-TmPZDd0bdMKo" alt="Navlungo"
+                            style="width: 50px; height: 50px; border-radius: 50%;">
+                            <p class="fw-bold mb-0 bg-white ms-2">Navlungo</p>
+                        </div>
+                        <button type="button" class="btn p-1 px-2 fw-bold" style="color: rgba(0,188,204,255); border: 1px solid rgba(0, 188, 204, 255); border-radius: 30px/30px;"> + Takip Et</button>
+                    </div>
+
+                </div>
+
+                <div class="card mt-2">
+                    <div class="d-flex justify-content-between bg-white align-items-center p-2 my-2 ms-2">
+                        <p class="bg-white mb-0">Bugünün en çok izlenen eğitimleri </p>
+                        <i class="fa-solid fa-circle-info bg-white" style="color: #878787;"></i>
+                    </div>
+                    <ol class="bg-white ms-2">
+                        <li class="fw-bold bg-white small">
+                            <a href="https://www.linkedin.com/learning/the-six-morning-habits-of-high-performers" class="mb-0 bg-white text-decoration-none text-black">The Six Morning Habits of High Performers</a>
+                            <p class="text-secondary fw-light small bg-white">Pete Mockaitis | How to Be Awesome at Your Job</p>
+                        </li>
+                        <li class="fw-bold bg-white small">
+                            <a href="https://www.linkedin.com/learning/494b1316-cb88-3ea2-8adc-fa2df01ae98a" class="mb-0 bg-white text-decoration-none text-black">Unconscious Bias</a>
+                            <p class="text-secondary fw-light small bg-white">Stacey Gordon</p>
+                        </li>
+                        <li class="fw-bold bg-white small">
+                            <a href="https://www.linkedin.com/learning/critical-thinking-for-better-judgment-and-decision-making/upgrading-critical-thinking-2" class="mb-0 bg-white text-decoration-none text-black">Critical Thinking for Better Judgment and Decision-Making</a>
+                            <p class="text-secondary fw-light small bg-white">Becki Saltzman</p>
+                        </li>
+                    </ol>
+                    <a href="https://www.linkedin.com/learning/" class="bg-white text-decoration-none mb-3" style="text-align: center;font-weight: bold; color: rgba(25,133,212,255);"> Linkedin Learning'de daha fazlasını öğrenin</a>
+                </div>
+
+
+                <div class="mt-2">
+                    <div class="d-flex justify-content-around">
+                        <a href="" style="color: #8e8e8e; text-decoration: none; text-align: center">Hakkında</a>
+                        <a href="" style="color: #8e8e8e; text-decoration: none; text-align: center;">Erişilebilirlik</a>
+                        <a href="" style="color: #8e8e8e; text-decoration: none; text-align: center;">Yardım Merkezi</a>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                        <a href="" style="color: #8e8e8e; text-decoration: none; text-align: center;">Gizlilik ve Koşullar</a>
+                        <a href="" style="color: #8e8e8e; text-decoration: none; text-align: center;">Reklam Tercihleri</a>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                        <a href="" style="color: #8e8e8e; text-decoration: none; text-align: center;">Reklam</a>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center mt-3 justify-content-center">
+                    <i class="fa-brands fa-linkedin mb-0" style="color: #117bce;"></i>
+                    <p class="mb-0 ms-1">LinkedIn Corporation © 2023</p>
+                </div>
+                
+            </div>
+        </div> 
+      </div>
+
+
+    <script src="https://kit.fontawesome.com/e828167a6f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
